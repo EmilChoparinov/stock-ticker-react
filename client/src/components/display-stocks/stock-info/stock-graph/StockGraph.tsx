@@ -83,12 +83,6 @@ export class StockGraph extends React.Component<Props, State> {
                                 fill: false
                             },
                             {
-                                data: this.state.lineData['1. open'],
-                                label: 'Open',
-                                borderColor: '#3cba9f',
-                                fill: false
-                            },
-                            {
                                 data: this.state.lineData['3. low'],
                                 label: 'Low',
                                 borderColor: '#e8c3b9',
