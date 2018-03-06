@@ -6,6 +6,7 @@ import StockInfo from './stock-info/StockInfo';
 
 export interface Props {
     stocks: Array<BatchStock>;
+    removeHandler: (symbol: string) => void;
 }
 
 class StockDisplay extends React.Component<Props, {}> {
@@ -22,6 +23,7 @@ class StockDisplay extends React.Component<Props, {}> {
                     symbol={stock['1. symbol']}
                     price={stock['2. price']}
                     volume={stock['3. volume']}
+                    onRemove={this.props.removeHandler}
                 />
             );
         });

@@ -7,6 +7,7 @@ export interface Props {
     symbol: string;
     price: number;
     volume: number;
+    onRemove: (symbol: string) => void;
 }
 
 export interface State {
@@ -38,9 +39,13 @@ class StockInfo extends React.Component<Props, State> {
         this.setState({ plotData: data });
     }
 
+    sendRemoveRequest = () => {
+        this.props.onRemove(this.props.symbol);
+    }
+
     render() {
         let graph;
-        
+
         // for the graph toggle
         if (this.state.isGraphOn) {
             graph = (
@@ -76,6 +81,11 @@ class StockInfo extends React.Component<Props, State> {
                             className="waves-effect waves-light btn right-align"
                             onClick={this.handleGraphComponent}
                         >Graph
+                        </div>
+                        <div
+                            className="waves-effect red accent-2 btn right-align"
+                            onClick={this.sendRemoveRequest}
+                        >Delete
                         </div>
                     </div>
                 </div>

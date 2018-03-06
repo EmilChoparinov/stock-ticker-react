@@ -50,7 +50,7 @@ class StockInput extends React.Component<Props, State> {
     getStockForm() {
         return (
             <div className="row">
-                <form className="col s12" onSubmit={this.handleNewStockSubmit}>
+                <div className="col s12" onSubmit={this.handleNewStockSubmit}>
                     <div id="remove-md" className="row">
                         <div className="input-field col s12">
                             <input
@@ -59,6 +59,13 @@ class StockInput extends React.Component<Props, State> {
                                 className="validate"
                                 value={this.state.stockInput}
                                 onChange={this.handleStockChange}
+                                onKeyPress={(event) => {
+                                    event.persist();
+                                    console.log(event);
+                                    if (event.charCode === 13) {
+                                        this.handleNewStockSubmit();
+                                    }
+                                }}
                             />
                             <label htmlFor="stock_symbol">Stock Symbol(s)</label>
                         </div>
@@ -71,7 +78,7 @@ class StockInput extends React.Component<Props, State> {
                         >submit
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         );
     }

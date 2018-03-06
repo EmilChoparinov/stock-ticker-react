@@ -46,6 +46,16 @@ class App extends React.Component<Props, State> {
     });
   }
 
+  handleStockRemove = (symbol: string) => {
+    let newData: BatchStock[] = [];
+    for (let stock of this.state.batchStockData) {
+      if (stock['1. symbol'] !== symbol) {
+        newData.push(stock);
+      }
+    }
+    this.setState({ batchStockData: newData });
+  }
+
   render() {
     return (
       <div className="App container">
@@ -55,7 +65,7 @@ class App extends React.Component<Props, State> {
         <div className="center-stock">
           <StockInput handleNewStockRequest={this.handelNewStockData} stocksCalled={this.state.batchStockData} />
         </div>
-        <StockDisplay stocks={this.state.batchStockData} />
+        <StockDisplay stocks={this.state.batchStockData} removeHandler={this.handleStockRemove} />
       </div>
     );
   }
