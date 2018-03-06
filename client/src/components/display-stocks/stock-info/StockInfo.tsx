@@ -40,17 +40,9 @@ class StockInfo extends React.Component<Props, State> {
 
     render() {
         let graph;
+        
+        // for the graph toggle
         if (this.state.isGraphOn) {
-            // if (!this.graph) {
-            //     if (this.state.hasLoaded) {
-            //         graph = this.graph;
-            //     } else {
-            //         this.graph = graph;
-            //         this.setState({ hasLoaded: true });
-            //     }
-            // } else {
-            //     graph = this.graph;
-            // }
             graph = (
                 <div className="card-content graph">
                     <StockGraph

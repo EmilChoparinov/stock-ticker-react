@@ -39,6 +39,8 @@ export class StockGraph extends React.Component<Props, State> {
     }
 
     componentWillMount() {
+
+        // if the data is not provided by the parent, make the request and give the data to the parent
         if (!this.props.plotData) {
             axios.default.post('/api/findstock', {
                 symbol: this.props.symbol,
@@ -124,6 +126,9 @@ export class StockGraph extends React.Component<Props, State> {
 
     render() {
         let curRender;
+
+        // if the graph is not currently mounted, do not load
+        // if it is, load
         if (!this.state.isMounted) {
             curRender = this.getLoadingGraphData();
         } else {
@@ -136,6 +141,10 @@ export class StockGraph extends React.Component<Props, State> {
         );
     }
 
+    /**
+     * generates the dataset in the format chart.js likes
+     * @param stockData the extremely hard to declare object this api sends me
+     */
     private _generateDataSets = (stockData: object) => {
         let dataSets: DatePlots = new DatePlots();
         for (let stockDate in stockData) {
@@ -150,6 +159,10 @@ export class StockGraph extends React.Component<Props, State> {
         return dataSets;
     }
 
+    /**
+     * generates the lables for the graph, spread by time 12 units
+     * @param dataSets the full dateplot object
+     */
     private _generateLabels = (dataSets: DatePlots) => {
         const timeInt = Math.trunc(dataSets['1. open'].length / 12);
         const labels: Array<string> = [];

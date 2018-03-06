@@ -88,6 +88,9 @@ class StockInput extends React.Component<Props, State> {
         );
     }
 
+    /**
+     * filters out the stocks that have been currently added to avoid duplicates
+     */
     private _filterCalledStocks = (stockRequests: string) => {
         const stockRequestArray = stockRequests.split(',');
         const filteredRequests = [];

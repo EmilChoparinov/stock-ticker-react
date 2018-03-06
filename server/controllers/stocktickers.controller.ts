@@ -9,14 +9,19 @@ import { StockData } from '../formats/interfaces/stockdata.interface';
 
 
 export const StockTickersController = {
+    /**
+     * gets multiple stock instance data at once, shallow
+     */
     getBatchStockData: (req: Request, res: Response) => {
         const stockQuery: BatchData = req.body;
         const uri = buildBatchUri(stockQuery.symbols);
         get(uri, (err, response, body) => {
-            console.log(body, stockQuery);
             if (err) {
                 res.status(400).json(new ServerMessage(false, body));
             } else {
+
+                // if the api fails it sends a heroku iframe saying its broken
+                // cant parse html
                 try {
                     const data = JSON.parse(body)['Stock Quotes'];
                     if (data) {
@@ -31,6 +36,9 @@ export const StockTickersController = {
         });
     },
 
+    /**
+     * gets one stock instance data, deep
+     */
     getSingleStockData: (req: Request, res: Response) => {
         const stockQuery: StockData = req.body;
         const uri = buildSingleStockUri(
@@ -54,6 +62,12 @@ export const StockTickersController = {
     }
 };
 
+
+/**
+ * gets the first instances of a key with a given substring
+ * @param obj object to search
+ * @param keyword target substring to find
+ */
 const getKeyWithKeyWord = (obj, keyword: string) => {
     for (let key in obj) {
         if (key.includes(keyword)) {
@@ -63,6 +77,12 @@ const getKeyWithKeyWord = (obj, keyword: string) => {
     return '';
 }
 
+/**
+ * builds a query for a single stock
+ * @param symbol stock symbol
+ * @param timeFunc the api's time function
+ * @param int the interval of time between stocks
+ */
 const buildSingleStockUri = (symbol: string, timeFunc: string, int: string) => {
     return uriBuilder('https://www.alphavantage.co', {
         path: 'query',
@@ -75,6 +95,10 @@ const buildSingleStockUri = (symbol: string, timeFunc: string, int: string) => {
     });
 };
 
+/**
+ * builds a query for multiple stocks
+ * @param symbols stock symbol or symbols
+ */
 const buildBatchUri = (symbols: string) => {
     return uriBuilder('https://www.alphavantage.co', {
         path: 'query',

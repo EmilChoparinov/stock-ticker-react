@@ -60,6 +60,10 @@ class App extends React.Component<Props, State> {
     );
   }
 
+  /**
+   * adds new batches of stock data to the current state batch
+   * @param batchStocks the stocks to batch
+   */
   private _addBatchStockData = (batchStocks: Array<BatchStock>) => {
     const newStockData = this.state.batchStockData;
     for (let batchStock of batchStocks) {
