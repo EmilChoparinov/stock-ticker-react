@@ -1,6 +1,6 @@
 ﻿# Stock Tracker React Project
 
-This file contains instructions on installing dependencies, building, and running the project on localhost. These instructions assume that you have node installed; if this is not the case, you can go and download it here [here](https://nodejs.org/)
+This file contains instructions on installing dependencies, building, and running the project on localhost. These instructions assume that you have node installed; if this is not the case, you can go and download it [here](https://nodejs.org/)
 
 ## Features
 Responsive buttons and form controls
@@ -31,7 +31,7 @@ This project was build in TypeScript meaning we have to first build before we ca
 
 ## Setting up the Backend
 
-The backend requires a little more setup due to the fact there are private API keys involved.
+The backend requires a little more setup due to the fact there are private API keys involved. Get you key [here](https://www.alphavantage.co/)
 1. In the server directory, create a **setup.json** file with the following contents:
 ```json
 {
