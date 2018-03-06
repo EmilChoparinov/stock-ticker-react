@@ -61,7 +61,6 @@ class StockInput extends React.Component<Props, State> {
                                 onChange={this.handleStockChange}
                                 onKeyPress={(event) => {
                                     event.persist();
-                                    console.log(event);
                                     if (event.charCode === 13) {
                                         this.handleNewStockSubmit();
                                     }

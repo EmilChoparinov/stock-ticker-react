@@ -78,13 +78,13 @@ export class StockGraph extends React.Component<Props, State> {
                             },
                             {
                                 data: this.state.lineData['2. high'],
-                                label: 'Open',
+                                label: 'High',
                                 borderColor: '#8e5ea2',
                                 fill: false
                             },
                             {
                                 data: this.state.lineData['1. open'],
-                                label: 'High',
+                                label: 'Open',
                                 borderColor: '#3cba9f',
                                 fill: false
                             },
@@ -112,9 +112,6 @@ export class StockGraph extends React.Component<Props, State> {
                             yAxes: [
                                 {
                                     display: true,
-                                    ticks: {
-                                        min: 70
-                                    }
                                 }
                             ]
                         }
