@@ -6,12 +6,10 @@
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
     "dateformat": "^3.0.3",
-    "moment": "^2.21.0",
     "react": "^16.2.0",
     "react-chartjs-2": "^2.7.0",
     "react-dom": "^16.2.0",
     "react-scripts-ts": "2.13.0",
-    "timeago": "^1.6.3",
     "uuid": "^3.2.1"
   },
   "scripts": {
