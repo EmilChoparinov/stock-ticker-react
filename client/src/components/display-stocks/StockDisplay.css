@@ -1,0 +1,26 @@
+.stock-data {
+    display: flex;
+}
+
+.stock-data h5 {
+    flex: 4;
+}
+
+.stock-counters {
+    display: flex;
+    flex: .5;
+    justify-content: center;
+    align-items: center;
+}
+
+.stock-counters div {
+    margin: 0px 10px;
+}
+
+.type {
+    font-size: .8em;
+    color: #a6a6a6;
+}
+
+
+/* #a6a6a6 */

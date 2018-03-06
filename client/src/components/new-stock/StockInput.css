@@ -1,0 +1,12 @@
+.StockInput {
+    width: 50%;
+}
+
+#remove-md{
+    margin-bottom: 0px;
+}
+#stock-input-message {
+    position: absolute;
+    color: #ff5252;
+    width: 50%;
+}
