@@ -15,7 +15,7 @@ Each stock has a graph. One API Call per graph to lighten API load.
 
 ![MSFT graph](https://i.imgur.com/drQtefI.png)
 
-There are also smaller things like API centric Errors, Incorrect stock input names ( will add in the okay ones) etc. 
+There are also smaller things like API centric Errors, incorrect stock input names ( will add in the okay stocks), etc. 
 
 ## Installing Client-Side dependencies
 Just like what we did above, we are now going to install the dependencies but for the other folder **client/**, visible from the root directory as well.
@@ -46,4 +46,4 @@ The backend requires a little more setup due to the fact there are private API k
 ```
 
 ## Running the server
-Everything should be setup now and ready to work. The command `npm start` inside the **server/** directory should run the server. If that fails you can try the command `ts-node server.ts`. The server should give you the notification in your command line `Server is active. Now listening on port {port specified in init.config.ts}`. There isn't a need to compile these files but you can if you like with tsc ( included in the package ).
+Everything should be setup now and ready to work. The command `npm start` inside the **server/** directory should run the server. If that fails you can try the command `ts-node server.ts`. The server should give you the notification in your command line **Server is active. Now listening on port {port specified in init.config.ts}**. There isn't a need to compile these files but you can if you like with tsc ( included in the package ).
