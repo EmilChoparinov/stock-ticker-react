@@ -46,4 +46,4 @@ The backend requires a little more setup due to the fact there are private API k
 ```
 
 ## Running the server
-Everything should be setup now and ready to work. The command `npm start` inside the **server/** directory should run the server. If that fails you can try the command `ts-node server.ts`. The server should give you the notification in your command line `Server is active. Now listening on port {port specified in init.config.ts}`. There isn't a need to compile these files but you can if you like with tsc ( included in the package ).
+Everything should be setup now and ready to work. The command `npm start` inside the **server/** directory should run the server. If that fails you can try the command `ts-node server.ts`. The server should give you the notification in your command line **Server is active. Now listening on port {port specified in init.config.ts}**. There isn't a need to compile these files but you can if you like with tsc ( included in the package ).
