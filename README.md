@@ -15,7 +15,7 @@ Each stock has a graph. One API Call per graph to lighten API load.
 
 ![MSFT graph](https://i.imgur.com/drQtefI.png)
 
-There are also smaller things like API centric Errors, Incorrect stock input names ( will add in the okay ones) etc. 
+There are also smaller things like API centric Errors, incorrect stock input names ( will add in the okay stocks), etc. 
 
 ## Installing Client-Side dependencies
 Just like what we did above, we are now going to install the dependencies but for the other folder **client/**, visible from the root directory as well.
