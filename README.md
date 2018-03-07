@@ -1,6 +1,6 @@
 ﻿# Stock Tracker React Project
 
-This file contains instructions on installing dependencies, building, and running the project on localhost. These instructions assume that you have node installed; if this is not the case, you can go and download it here [here](https://nodejs.org/)
+This file contains instructions on installing dependencies, building, and running the project on localhost. These instructions assume that you have node installed; if this is not the case, you can go and download it [here](https://nodejs.org/)
 
 ## Features
 Responsive buttons and form controls
@@ -23,7 +23,7 @@ Just like what we did above, we are now going to install the dependencies but fo
 2. Run the command `npm install`. This might take a while as there are a lot of dependencies for react
 
 ## Building React in TypeScript
-This project was build in TypeScript meaning we have to first build before we can actually run it. Luckily enough React TS makes it very easy to build our project. Simply run the command `npm run-script build` in the **client/** folder. If the command fails try doing it with a more direct one like `react-scripts-ts build`. 
+This project was build in TypeScript meaning we have to first build before we can actually run it. Luckily enough React TS makes it very easy to build our project. Simply run the command `npm run-script build` in the **client/** folder. 
 
 ## Installing Server-Side dependencies
 1. In a terminal of your choice, navigate to **server/** from the root project directory.
@@ -31,7 +31,7 @@ This project was build in TypeScript meaning we have to first build before we ca
 
 ## Setting up the Backend
 
-The backend requires a little more setup due to the fact there are private API keys involved.
+The backend requires a little more setup due to the fact there are private API keys involved. Get you key [here](https://www.alphavantage.co/)
 1. In the server directory, create a **setup.json** file with the following contents:
 ```json
 {
@@ -46,4 +46,4 @@ The backend requires a little more setup due to the fact there are private API k
 ```
 
 ## Running the server
-Everything should be setup now and ready to work. The command `npm start` inside the **server/** directory should run the server. If that fails you can try the command `ts-node server.ts`. The server should give you the notification in your command line **Server is active. Now listening on port {port specified in init.config.ts}**. There isn't a need to compile these files but you can if you like with tsc ( included in the package ).
+Everything should be setup now and ready to work. The command `npm start` inside the **server/** directory should run the server. If that fails you can try the command `ts-node server.ts` after npm linking or globalling installing `ts-node`. The server should give you the notification in your command line **Server is active. Now listening on port {port specified in init.config.ts}**. There isn't a need to compile these files but you can if you like with tsc ( included in the package ).
